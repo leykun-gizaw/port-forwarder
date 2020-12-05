@@ -29,7 +29,7 @@ if ($ports.Length -eq 0) {                      #Checkes if user has inputed atl
     for( $i = 0; $i -lt $ports.length; $i++ ){
         $port = $ports[$i]
         #Below executes the command in "" which is applying port forwarding to the corresponding host and wsl ip addresses.
-        Invoke-Expression "netsh interface portproxy add v4tov4 listenport=$ports listenaddress=$hostIP connectport=$ports connectaddress=$remoteIP";
+        Invoke-Expression "netsh interface portproxy add v4tov4 listenport=$port listenaddress=$hostIP connectport=$port connectaddress=$remoteIP";
     }
     #Below checks if any port inputed is 22 and if so prompts the user the status of the service starting.
     if ($ports.IndexOf(22) -ne -1) {
